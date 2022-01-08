@@ -1,11 +1,18 @@
-# Vue 3 + Typescript + Vite
+# rehype-prims-plus typing issue
 
-This template should help get you started developing with Vue 3 and Typescript in Vite. The template uses Vue 3 `<script setup>` SFCs, check out the [script setup docs](https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup) to learn more.
+## Problem
 
-## Recommended IDE Setup
+This is the error message when compiling TypeScript file that imports the module.
 
-- [VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=johnsoncodehk.volar)
+```sh
+error TS2315: Type 'Visitor' is not generic.
 
-## Type Support For `.vue` Imports in TS
+9 export type Visitor = import('unist-util-visit').Visitor<Node>;
+```
 
-Since TypeScript cannot handle type information for `.vue` imports, they are shimmed to be a generic Vue component type by default. In most cases this is fine if you don't really care about component prop types outside of templates. However, if you wish to get actual prop types in `.vue` imports (for example to get props validation when using manual `h(...)` calls), you can enable Volar's `.vue` type support plugin by running `Volar: Switch TS Plugin on/off` from VSCode command palette.
+For more details, please see this [rehype-prism-plus#23](https://github.com/timlrx/rehype-prism-plus/issues/23).
+
+## How to run
+
+1. Run `npm i` to install the dependencies
+2. Run `npm run build` and see the error message
